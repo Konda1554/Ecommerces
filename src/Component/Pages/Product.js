@@ -2,15 +2,23 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addCart } from "../../Redux/Action/Index";
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
+toast.configure()
 const Product = () => {
   const { id } = useParams();
-
+const [buttonText,setButtonText]= useState('Add To Cart')
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const addProduct = (product) => {
+    if (buttonText === 'Add To Cart') {
     dispatch(addCart(product));
+    setButtonText ('Added') 
+    toast.success("Added to Cart")
+  }
+  else toast.error ('Product already added')
     
   };
   useEffect(() => {
@@ -19,6 +27,7 @@ const Product = () => {
       const response = await fetch(`https://5d76bf96515d1a0014085cf9.mockapi.io/product/${id}`);
       setProduct(await response.json());
       setLoading(false);
+      
     };
     getProduct();
   }, []);
@@ -51,7 +60,7 @@ const Product = () => {
             className="btn btn-outline-dark mr-3"
             onClick={() => addProduct(product)}
           >
-            Add to Cart
+           {buttonText}
           </button>
           <Link to="/cart">
             {" "}
