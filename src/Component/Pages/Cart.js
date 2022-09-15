@@ -21,13 +21,13 @@ export default function Cart() {
         {state.map((product) => {
           return (
             <div key={product.id}>
-              <div className='col-md-6'>
+              <div className='col-md-4'>
                 <img src={product.preview} alt={product.name} height="200px" width='180px' />
               </div>
-              <div className='col-md-6'>
+              <div className='col-md-4'>
                 <h3>{product.name}</h3>
                 <p className='lead'>{product.qty} X ${product.price} = $ {product.qty * product.price}</p>
-                <button className='btn btn-outline-dark' onClick={() => handleButtonMinus(product)}><i className='fa fa-minus'></i></button>
+                <button className='btn btn-outline-dark mr-3' onClick={() => handleButtonMinus(product)}><i className='fa fa-minus'></i></button>
                 <button className='btn btn-outline-dark' onClick={() => handleButtonPlus(product)}><i className='fa fa-plus'></i></button>
 
               </div>
@@ -36,8 +36,9 @@ export default function Cart() {
         })}
 
       </div>
+      
       <div className='text-center'>
-      <h1>Total Amount { name}</h1>  
+      <h1>Total Amount  ${ name}</h1>  
       <button className='btn btn-outline-dark mr-2'>Buy Now</button>
 
       </div>
