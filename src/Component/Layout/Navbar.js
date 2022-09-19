@@ -1,9 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Navbar = () => {
+    const {
+        isAuthenticated,
+        user,
+        loginWithRedirect,
+        logout,
+      } = useAuth0();
     const state = useSelector((state)=> state.handleCart)
+   
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
@@ -29,13 +37,14 @@ const Navbar = () => {
                             <Link to='' className="nav-link " >Contact us</Link>
                         </li>
                     </ul>
-                    <div className='buttons'>
-                        <Link to='' className='btn btn-outline-dark'>
+                    <div className='buttons d-flex'>
+                        { isAuthenticated ? ( <div><i className="fa fa-user"></i><span className='username'>{user.nickname}</span>  <button className='btn btn-outline-dark mr-2' onClick={logout}>
+                            <i className='fa fa-sign-in'></i> Logout
+                        </button ></div>) : (<button  to='' className='btn btn-outline-dark ' onClick={loginWithRedirect}>
                             <i className='fa fa-sign-in'></i> Login
-                        </Link>
-                        <Link to='' className='btn btn-outline-dark m-2'>
-                            <i className='fa fa-user-plus'></i> Register
-                        </Link>
+                        </button >) }
+                        
+                        
                         <Link to='/cart' className='btn btn-outline-dark '>
                             <i className='fa fa-shopping-cart'></i> Cart ({state.length})
                         </Link>

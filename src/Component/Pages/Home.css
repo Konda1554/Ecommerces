@@ -25,4 +25,12 @@
         margin-right: -30px!important;
     }
   }
- 
+  .fa-user{
+    font-size: 25px !important;
+    padding: 05px;
+    color: blue;
+  }
+ .username{
+    padding: 05px;
+    color: red;
+ }
