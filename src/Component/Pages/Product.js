@@ -37,12 +37,11 @@ const [buttonText,setButtonText]= useState('Add To Cart')
   const ShowProduct = () => {
     return (
       <>
-        <div className="col-md-6 mt-5 ">
+        <div className="col-md-6  ">
           <img
             src={product.preview}
             alt={product.name}
-            height="400px"
-            width="400px"
+            width='80%'
           />
         </div>
         <div className="col-md-6 mt-5 ">

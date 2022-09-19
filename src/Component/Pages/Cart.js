@@ -12,34 +12,40 @@ export default function Cart() {
   const handleButtonMinus = (product) => {
     dispatch(delCart(product));
   }
-  let name=state.reduce ((total,current)=>{
-    return total+(current.price*current.qty)
-  },0)
+  let name = state.reduce((total, current) => {
+    return total + (current.price * current.qty)
+  }, 0)
   return (
     <div className='container'>
       <div className='row mb-5 mt-5'>
+        <div className='col-md-12'>
         {state.map((product) => {
           return (
             <div key={product.id}>
-              <div className='col-md-4'>
-                <img src={product.preview} alt={product.name} height="200px" width='180px' />
+              <div className='row mb-5 mt-5'>
+              <div className='col-md-3'>
+                <img src={product.preview} alt={product.name} height='250px' width='100%' />
               </div>
-              <div className='col-md-4'>
+              <div className='col-md-3 mt-5'>
                 <h3>{product.name}</h3>
-                <p className='lead'>{product.qty} X ${product.price} = $ {product.qty * product.price}</p>
+              </div>
+              <div className='col-md-3 mt-5'>
                 <button className='btn btn-outline-dark mr-3' onClick={() => handleButtonMinus(product)}><i className='fa fa-minus'></i></button>
                 <button className='btn btn-outline-dark' onClick={() => handleButtonPlus(product)}><i className='fa fa-plus'></i></button>
-
+              </div>
+              <div className='col-md-3 mt-5'>
+              <b><p className='lead price-cart'>{product.qty} X ${product.price} = $ {product.qty * product.price}</p></b>  
+              </div>
               </div>
             </div>
           );
         })}
-
+</div>
       </div>
-      
+
       <div className='text-center'>
-      <h1>Total Amount  ${ name}</h1>  
-      <button className='btn btn-outline-dark mr-2'>Buy Now</button>
+        <h1>Total Amount  ${name}</h1>
+        <button className='btn btn-outline-dark mr-2'>Buy Now</button>
 
       </div>
 

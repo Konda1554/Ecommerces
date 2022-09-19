@@ -18,6 +18,7 @@ const App = () => {
        <Route exact path='/cart' element={<Cart />}/>
       </Routes>
       </BrowserRouter>
+      
     </div>
    
   )
