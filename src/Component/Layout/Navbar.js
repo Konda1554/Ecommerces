@@ -40,7 +40,7 @@ const Navbar = () => {
                     <div className='buttons d-flex'>
                         { isAuthenticated ? ( <div><i className="fa fa-user"></i><span className='username'>{user.nickname}</span>  <button className='btn btn-outline-dark mr-2' onClick={logout}>
                             <i className='fa fa-sign-in'></i> Logout
-                        </button ></div>) : (<button  to='' className='btn btn-outline-dark ' onClick={loginWithRedirect}>
+                        </button ></div>) : (<button  to='' className='btn btn-outline-dark mr-2 ' onClick={loginWithRedirect}>
                             <i className='fa fa-sign-in'></i> Login
                         </button >) }
                         
