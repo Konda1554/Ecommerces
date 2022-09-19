@@ -29,6 +29,11 @@ const handleCart =(state= cart, action)=>{
                     );
                 }
                 break;
+                case "PDELITEM":
+                    
+                    return state.filter((x) => x.id  !== product);
+break;
+
                 default:
                     return state;
                     break;

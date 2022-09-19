@@ -13,3 +13,9 @@ export const delCart =(product)=>{
         payload : product
     }
 }
+export const pdelCart =(product)=>{
+    return {
+        type : "PDELITEM",
+        payload : product
+    }
+}

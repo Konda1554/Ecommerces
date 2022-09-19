@@ -1,7 +1,8 @@
+import axios from 'axios';
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useDispatch } from "react-redux";
-import { addCart, delCart } from "../../Redux/Action/Index";
+import { addCart, delCart, pdelCart } from "../../Redux/Action/Index";
 
 export default function Cart() {
   const dispatch = useDispatch();
@@ -15,6 +16,10 @@ export default function Cart() {
   let name = state.reduce((total, current) => {
     return total + (current.price * current.qty)
   }, 0)
+  const deleteuser=(id) =>{
+    dispatch(pdelCart(id));
+    
+  }
   return (
     <div className='container'>
       <div className='row mb-5 mt-5'>
@@ -31,7 +36,8 @@ export default function Cart() {
               </div>
               <div className='col-md-3 mt-5'>
                 <button className='btn btn-outline-dark mr-3' onClick={() => handleButtonMinus(product)}><i className='fa fa-minus'></i></button>
-                <button className='btn btn-outline-dark' onClick={() => handleButtonPlus(product)}><i className='fa fa-plus'></i></button>
+                <button className='btn btn-outline-dark mr-3' onClick={() => handleButtonPlus(product)}><i className='fa fa-plus'></i></button>
+                <button className='btn btn-outline-dark'onClick={()=>deleteuser(product.id)}> Delete</button>
               </div>
               <div className='col-md-3 mt-5'>
               <b><p className='lead price-cart'>{product.qty} X ${product.price} = $ {product.qty * product.price}</p></b>  
