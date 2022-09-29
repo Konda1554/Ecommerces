@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useAuth0 } from '@auth0/auth0-react';
+
 
 const Navbar = () => {
     const {
@@ -11,12 +12,13 @@ const Navbar = () => {
         logout,
       } = useAuth0();
     const state = useSelector((state)=> state.handleCart)
-   
+    const dispatch=useDispatch()
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
                 <div className='container'>
-                <Link to='/' className="navbar-brand fw-bold" ><b>Our Shop</b></Link>
+                <Link to='/' className="navbar-brand fw-bold " ><img src='./Images/Rj.png'alt='logo' width={'200px'}></img></Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -38,7 +40,10 @@ const Navbar = () => {
                         </li>
                     </ul>
                     <div className='buttons d-flex'>
-                        { isAuthenticated ? ( <div><i className="fa fa-user"></i><span className='username'>{user.nickname}</span>  <button className='btn btn-outline-dark mr-2' onClick={logout}>
+                        { isAuthenticated ? ( <div><i className="fa fa-user"></i><span className='username'>{user.nickname}</span>  <button className='btn btn-outline-dark mr-2' onClick= {()=>{
+                            logout()
+                            
+                        }}>
                             <i className='fa fa-sign-in'></i> Logout
                         </button ></div>) : (<button  to='' className='btn btn-outline-dark mr-2 ' onClick={loginWithRedirect}>
                             <i className='fa fa-sign-in'></i> Login
