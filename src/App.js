@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import Navbar from './Component/Layout/Navbar'
+import Buy from './Component/Pages/Buy'
 import Cart from './Component/Pages/Cart'
 import Home from './Component/Pages/Home'
 import Product from './Component/Pages/Product'
@@ -16,6 +17,7 @@ const App = () => {
        <Route exact path='/product' element={<Products />}/>
        <Route exact path='/product/:id' element={<Product />}/>
        <Route exact path='/cart' element={<Cart />}/>
+       <Route exact path='/buy' element={<Buy />}/>
       </Routes>
       </BrowserRouter>
       

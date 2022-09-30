@@ -2,7 +2,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useDispatch } from "react-redux";
+import { useNavigate } from 'react-router-dom';
 import { addCart, delCart, pdelCart } from "../../Redux/Action/Index";
+import { useAuth0 } from '@auth0/auth0-react';
 
 export default function Cart() {
   const dispatch = useDispatch();
@@ -19,6 +21,21 @@ export default function Cart() {
   const deleteuser=(id) =>{
     dispatch(pdelCart(id));
     
+  }
+  const navigate = useNavigate ()
+  const {
+    isAuthenticated,loginWithRedirect
+   
+  } = useAuth0();
+  const buynow = () =>{
+    if (isAuthenticated){
+      navigate('/buy')
+    }else{
+      loginWithRedirect ()
+     
+    }
+    
+  
   }
   return (
     <div className='container'>
@@ -48,12 +65,14 @@ export default function Cart() {
         })}
 </div>
       </div>
-
-      <div className='text-center'>
+        {state.length<1 ? <h1 className='text-center'>No Item in Cart</h1>:
+        <div className='text-center'>
         <h1>Total Amount  ${name}</h1>
-        <button className='btn btn-outline-dark mr-2'>Buy Now</button>
+        <button className='btn btn-outline-dark mr-2' onClick={()=> buynow()}>Buy Now</button>
 
       </div>
+        }
+      
 
     </div>
   )
