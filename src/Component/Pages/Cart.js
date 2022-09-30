@@ -68,7 +68,7 @@ export default function Cart() {
         {state.length<1 ? <h1 className='text-center'>No Item in Cart</h1>:
         <div className='text-center'>
         <h1>Total Amount  ${name}</h1>
-        <button className='btn btn-outline-dark mr-2' onClick={()=> buynow()}>Buy Now</button>
+        <button className='btn btn-outline-dark mr-2 mb-5' onClick={()=> buynow()}>Buy Now</button>
 
       </div>
         }
