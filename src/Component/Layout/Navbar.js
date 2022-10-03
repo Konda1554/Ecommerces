@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { useAuth0 } from '@auth0/auth0-react';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 const Navbar = () => {
@@ -14,19 +14,17 @@ const Navbar = () => {
       } = useAuth0();
     const state = useSelector((state)=> state.handleCart)
     const dispatch=useDispatch()
-    const [search,setSearch]=useState("");
-    const [loading,setLoading]=useState(false)
-    const [post,setPost]=useState([]);
-    useEffect(()=>{
-        const loadposts = async ()=>{
-            setLoading(true);
-            const response = await axios.get("https://5d76bf96515d1a0014085cf9.mockapi.io/product")
-            setPost(response.data)
-            setLoading(false)
-        };
-        loadposts();
+   
+    // useEffect(()=>{
+    //     const loadposts = async ()=>{
+    //         setLoading(true);
+    //         const response = await axios.get("https://5d76bf96515d1a0014085cf9.mockapi.io/product")
+    //         setPost(response.data)
+    //         setLoading(false)
+    //     };
+    //     loadposts();
 
-    },[])
+    // },[])
 
     return (
         <div>
@@ -54,10 +52,10 @@ const Navbar = () => {
                         </li> */}
                         
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
+                    {/* <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={(e)=>setSearch(e.target.value)}/>
-      {/* <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> */}
-    </form>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> */}
                     <div className='buttons d-flex'>
                         { isAuthenticated ? ( <div><i className="fa fa-user"></i><span className='username'>{user.nickname}</span>  <button className='btn btn-outline-dark mr-2' onClick= {()=>{
                             logout()
