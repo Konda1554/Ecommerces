@@ -90,7 +90,7 @@ const Products = () => {
       <div className="container my-5 py-5">
         <div className="row">
           <div className="col-md-12">
-            <h1 className=" text-center ">
+            <h1 className=" text-center mt-5">
               <b>Latest Products</b>
             </h1>
             <hr />
