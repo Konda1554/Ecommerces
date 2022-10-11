@@ -13,13 +13,13 @@ const Home = () => {
   </ol>
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img className="d-block w-100 mt-5" src="https://img.freepik.com/premium-vector/online-shopping-concept-digital-marketing-website-mobile-application_43880-342.jpg?size=626&ext=jpg&ga=GA1.2.96464124.1655180416"width='100%'  alt="First slide" />
+      <img className="d-block w-100 mt-5" src="https://img.freepik.com/premium-vector/online-shopping-illustration-with-smartphone-shopping-store_115083-316.jpg?size=626&ext=jpg"  alt="First slide" />
     </div>
     <div className="carousel-item">
-      <img className="d-block w-100 carousl-secimg" src="https://img.freepik.com/free-psd/horizontal-banner-template-online-fashion-sale_23-2148585405.jpg?size=626&ext=jpg&ga=GA1.2.96464124.1655180416"width='100%' height='550px' alt="Second slide"/>
+      <img className="d-block w-100 carousl-secimg" src="https://img.freepik.com/free-psd/landing-page-online-fashion-sale_23-2148585401.jpg?size=626&ext=jpg&ga=GA1.2.96464124.1655180416"  alt="Second slide"/>
     </div>
     <div className="carousel-item">
-      <img className="d-block w-100 mt-5" src="https://img.freepik.com/premium-photo/omni-channel-technology-online-retail-business_31965-3010.jpg?w=996"width='100%'height='560px' alt="Third slide"/>
+      <img className="d-block w-100 mt-5" src="https://img.freepik.com/free-photo/full-shot-travel-concept-with-landmarks_23-2149153258.jpg?size=626&ext=jpg" alt="Third slide"/>
     </div>
   </div>
   <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
