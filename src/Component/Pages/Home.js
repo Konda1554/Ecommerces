@@ -3,7 +3,7 @@ import Products from './Products'
 
 const Home = () => {
   return (
-   <div>
+   <div >
     {/* Carousel */}
     <div id="carouselExampleIndicators" className="carousel slide mt-5" data-ride="carousel">
   <ol className="carousel-indicators">
@@ -13,13 +13,13 @@ const Home = () => {
   </ol>
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img className="d-block w-100" src="https://img.freepik.com/premium-vector/digital-marketing-concept-online-shopping-mobile-application_68971-367.jpg?size=626&ext=jpg&ga=GA1.2.96464124.1655180416"width='100%'  alt="First slide" />
+      <img className="d-block w-100 mt-5" src="https://img.freepik.com/premium-vector/online-shopping-concept-digital-marketing-website-mobile-application_43880-342.jpg?size=626&ext=jpg&ga=GA1.2.96464124.1655180416"width='100%'  alt="First slide" />
     </div>
     <div className="carousel-item">
-      <img className="d-block w-100" src="https://img.freepik.com/premium-vector/orange-big-sale-discount-banners-set-with-star-background-instaram-post-social-media-web_75010-347.jpg?w=996"width='100%'  alt="Second slide"/>
+      <img className="d-block w-100 carousl-secimg" src="https://img.freepik.com/free-psd/horizontal-banner-template-online-fashion-sale_23-2148585405.jpg?size=626&ext=jpg&ga=GA1.2.96464124.1655180416"width='100%' height='550px' alt="Second slide"/>
     </div>
     <div className="carousel-item">
-      <img className="d-block w-100" src="https://img.freepik.com/premium-photo/3d-concept-illustration-mobile-phone-with-ecommerce-decoration-black-background_582556-31.jpg?size=626&ext=jpg&ga=GA1.2.96464124.1655180416"width='100%' alt="Third slide"/>
+      <img className="d-block w-100 mt-5" src="https://img.freepik.com/premium-photo/omni-channel-technology-online-retail-business_31965-3010.jpg?w=996"width='100%'height='560px' alt="Third slide"/>
     </div>
   </div>
   <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
