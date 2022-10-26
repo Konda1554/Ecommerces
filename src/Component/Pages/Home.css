@@ -1,3 +1,7 @@
+/* body{
+  background-color: #9fbded;
+
+} */
 
 .price{
     font-weight: bolder;
@@ -52,4 +56,68 @@
     margin-top: 100px;
     font-size: 30px;
   }
+}
+/* button color */
+.btn:not(:disabled) {
+  cursor: pointer;
+  border: 1px solid #315185;
+  color: #315185;
+}
+.btn:not(:disabled)::hover {
+ background-color: #315185 !important;
+  color:white;
+}
+
+/* cart */
+.Product-Name{
+  margin-top: 100px !important;
+}
+.Product-qulty{
+  margin-top: 75px !important;
+
+}
+.Product-price{
+  margin-top: 85px !important;
+
+}
+/* product */
+
+.btn-read {
+  position: relative;
+ display: inline-block;
+font-size: 14px;
+ padding: 5px 15px;
+ overflow: hidden;
+ z-index: 1;
+   color: black;
+   background-color: white;
+   border: none;
+   font-weight: 600;
+   border: 1px solid #315185;
+}
+.btn--animated:before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-color: #315185;
+ transform: scaleX(0);
+ transform-origin: 0 50%;
+ transition-property: transform;
+ transition-duration: 2s;
+ transition-timing-function: ease-out;
+ z-index: -1;
+}
+.btn--animated:hover {
+ color: #fff;
+}
+.btn--animated:hover:before {
+ transform: scaleX(1);
+ transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
+}
+.btn:hover{
+  background-color: #315185;
+  color: white;
 }

@@ -28,7 +28,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm  fixed-top">
+            <nav className="navbar navbar-expand-lg navbar-light bg-white py-3  fixed-top">
                 <div className='container'>
                 <Link to='/' className="navbar-brand fw-bold " ><img src='./Images/Rj.png'alt='logo' width={'200px'}></img></Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

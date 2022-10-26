@@ -72,7 +72,7 @@ const Products = () => {
                     <p className="card-text lead price">${product.price}</p>
                     <Link
                       to={`/product/${product.id}`}
-                      className="btn btn-outline-dark"
+                      className="btn--border btn-read btn--animated "
                     >
                       Buy Now
                     </Link>
@@ -98,20 +98,20 @@ const Products = () => {
         </div>
         <div className="buttons d-flex justify-content-center mb-5 pb-5">
           <div
-            className="btn btn-outline-dark mr-2"
+            className="btn  mr-2"
             onClick={() => setFilter(data)}
           >
             All
           </div>
           <div
-            className="btn btn-outline-dark mr-2"
+            className="btn  mr-2"
             onClick={() => filterProduct(true)}
           >
             Accessory
 
           </div>
           <div
-            className="btn btn-outline-dark mr-2"
+            className="btn mr-2"
             onClick={() => filterProduct(false)}
           >
             Clothing

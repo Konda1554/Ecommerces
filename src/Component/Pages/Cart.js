@@ -38,26 +38,30 @@ export default function Cart() {
   
   }
   return (
+    
     <div className='container'>
+     
       <div className='row mb-5 mt-5'>
         <div className='col-md-12'>
+        <h1>hello</h1>
+       
         {state.map((product) => {
           return (
             <div key={product.id}>
               <div className='row mb-5 mt-5'>
-              <div className='col-md-3'>
+              <div className='col-md-3 mt-5'>
                 <img src={product.preview} alt={product.name} height='250px' width='100%' />
               </div>
-              <div className='col-md-3 mt-5'>
-                <h3>{product.name}</h3>
+              <div className='col-md-3 '>
+                <h3 className='Product-Name'>{product.name}</h3>
               </div>
               <div className='col-md-3 mt-5'>
-                <button className='btn btn-outline-dark mr-3' onClick={() => handleButtonMinus(product)}><i className='fa fa-minus'></i></button>
-                <button className='btn btn-outline-dark mr-3' onClick={() => handleButtonPlus(product)}><i className='fa fa-plus'></i></button>
-                <button className='btn btn-outline-dark'onClick={()=>deleteuser(product.id)}> Delete</button>
+                <button className='btn btn-outline-dark mr-3 Product-qulty' onClick={() => handleButtonMinus(product)}><i className='fa fa-minus'></i></button>
+                <button className='btn btn-outline-dark mr-3 Product-qulty' onClick={() => handleButtonPlus(product)}><i className='fa fa-plus'></i></button>
+                <button className='btn btn-outline-dark Product-qulty'onClick={()=>deleteuser(product.id)}> Delete</button>
               </div>
               <div className='col-md-3 mt-5'>
-              <b><p className='lead price-cart'>{product.qty} X ${product.price} = $ {product.qty * product.price}</p></b>  
+              <b><p className='lead price-cart Product-price'>{product.qty} X ${product.price} = $ {product.qty * product.price}</p></b>  
               </div>
               </div>
             </div>
@@ -75,6 +79,7 @@ export default function Cart() {
       
 
     </div>
+    
   )
 }
 
